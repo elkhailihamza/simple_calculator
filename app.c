@@ -11,22 +11,17 @@ int main() {
         history[i] = 0;
     }
     
-    int option;
-    int i = 0;
+    int option, i = 0;
 
-    double num1, num2;
-
-    double result;
+    double num1, num2, result;
 
     while (1) {   
-        printf("\nSelect option: ");
+        printf("\nSelect option 1 or 2: ");
         scanf("%d", &option);
         if (option == 1) {
             while(i < 5) {
                 printf("\nEnter an equation: ");
-                scanf("%lf", &num1);
-                scanf(" %c", &operator);
-                scanf(" %lf", &num2);
+                scanf("%lf %c %lf", &num1, &operator, &num2);
 
             if(operator == operators[0]) {
                 result = num1 + num2;
@@ -53,7 +48,6 @@ int main() {
                 return 1;
             }
             printf("\n%.2lf %c %.2lf = %.2lf\n", num1, operator, num2, result);
-            option = 0;
             }
         } else if (option == 2) {
             printf("\n\tHistory: \n");
@@ -61,7 +55,6 @@ int main() {
                 printf("%d.\t%.2lf\n", y + 1, history[y]);
                 i--;
             }
-            option = 0;
         } else if(option == 3) {
             printf("quit");
             return 0;
